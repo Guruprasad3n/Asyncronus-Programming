@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel="stylesheet" href="./styles/signup.css">
+        
+    </head>
+
+    <body>
+        <div id="navBar">
+                <div class="div">
+                    <a href="index.html">Home</a>
+                    <a href="signup.html">Signup</a>
+                    <a href="login.html">Login</a>
+                </div>
+        </div>
+        <div id="signup-form-div">
+            <h1>Signup</h1>
+            <form id="form">
+                <!--Write form input elements here-->
+                <input id="name"  type="text" placeholder="Enter your Name" required> <br>
+                <input id="contact" type="text" placeholder="Enter your Contact" required><br>
+                <input id="email" type="text" placeholder="Enter your Email" required><br>
+                <input id="pswd" type="text" placeholder="Enter your Password" required><br>
+                <input id="submit" type="submit" value="Submit">
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+<script>
+    // function signup(n, c, e, p){
+    //         this.name=n;
+    //         this.contact= c;
+    //         this.email = e;
+    //         this.pswd= p;
+    //     }
+
+    // function suBmit(eve){
+    //     eve.preventDefault()
+    //     let form = document.querySelector("#form");
+    //     let name = form.name.value;
+    //     let contact = form.contact.value;
+    //     let email = form.email.value;
+    //     let password = form.pswd.value
+    //     var data = new signup(name, contact, email, pswd)
+    //     console.log(data)
+    //     // document.getElementById("form").innerText="";
+
+    // var arr = JSON.parse(localStorage.getItem("signup")) || []
+    //         arr.push(data)
+    //     localStorage.setItem("signup", JSON.stringify(arr))
+    // }
+
+
+    document.querySelector("form").addEventListener("submit", myFun);
+    
+
+    function myFun(){
+        event.preventDefault();
+
+        let obj = {
+            name : form.name.value,
+            contact : form.contact.value,
+            email : form.email.value,
+            password : form.pswd.value
+        };
+
+
+
+    var data = JSON.parse(localStorage.getItem("Data")) ||[]
+
+
+    alert("Registration Succrssful")
+    window.location.href="login.html";
+        data.push(obj)
+        // console.log(data)
+        localStorage.setItem("Data", JSON.stringify(data))
+    }
+    
+
+</script>

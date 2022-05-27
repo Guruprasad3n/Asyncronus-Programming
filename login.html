@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="./styles/login.css">
+    </head>
+
+    <body>
+        <div id="navBar">
+                <div class="div">
+                    <a href="index.html">Home</a>
+                    <a href="signup.html">Signup</a>
+                    <a href="login.html">Login</a>
+                </div>
+        </div>
+        <div id="login-form-div">
+            <div id="login">
+                <h1>Login</h1>
+            </div>
+            <form id="form">
+                <!--Write form input elements here-->
+
+                <input id="email" type="text" placeholder="Enter your Email" required><br>
+                <input id="password" type="text" placeholder="Enter your Password" required><br>
+                <input type="submit" value="Submit" id="submit">
+
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+<script>
+    // document.getElementById("submit").addEventListener("submit", loginFun());
+    // var userLogin = JSON.parse(localStorage.getItem("signup")) || []
+
+    // // userLogin(dara)
+    // function loginFun(){
+    //     event.preventDefault()
+
+    //     var enterEmail = form.email.value;
+    //     let enterPass = form.password.value;
+
+    //     for(var i=0; i<userLogin.length; i++){
+    //         console.log(userLogin[i]);
+    //         if(userLogin[i].email == enterEmail && userLogin[i] == password == enterPass){
+    //             alert("Login Successful");
+    //             window.location.href="index.html";
+    //             break;
+    //         }
+    //         else{
+    //             console.log("Login Failed")
+    //         }
+    //     }
+    // }
+
+    document.querySelector("form").addEventListener("submit", getData)
+
+    var data = JSON.parse(localStorage.getItem("Data")) ||[]
+function getData(){
+    event.preventDefault()
+    var loginEmail = form.email.value;
+    var loginPassword = form.password.value;
+
+    for(var i=0; i<data.length; i++){
+        // console.log(data[i])
+        if(data[i].email == loginEmail && data[i].password == loginPassword){
+                alert("login Success")
+                window.location.href="index.html";
+                break; 
+        }
+        else{
+            alert("login Failed")
+            form.innerHtml.value=null;
+        }
+    }
+}
+
+
+</script>
